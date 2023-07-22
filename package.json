@@ -6,11 +6,38 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "pnpm lint:prettier && pnpm lint:eslint",
+    "lint:prettier": "prettier --check --loglevel=warn '**/*.{ts,vue}'",
+    "lint:eslint": "eslint '**/*.{ts,vue}'",
+    "format": "pnpm format:prettier && pnpm format:eslint",
+    "format:prettier": "prettier --check --write --loglevel=warn '**/*.{ts,vue}'",
+    "format:eslint": "eslint --fix '**/*.{ts,vue}'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@storybook/addon-essentials": "^7.1.0",
+    "@storybook/addon-interactions": "^7.1.0",
+    "@storybook/addon-links": "^7.1.0",
+    "@storybook/blocks": "^7.1.0",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/vue3": "^7.1.0",
+    "@storybook/vue3-vite": "^7.1.0",
     "@types/node": "^18.16.19",
-    "nuxt": "^3.6.5"
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "nuxt": "^3.6.5",
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.1.0",
+    "tailwindcss": "^3.3.3",
+    "unplugin-auto-import": "^0.16.6"
   }
 }
